@@ -60,7 +60,7 @@ const HomePage = () => {
           <div className="col-lg-8 col-md-12">
             <Block>
               <h2 id="mainHeader">Bem vindo a Won Games!</h2>
-              <P>Ao lado você pode inserir diferentes jogos, categoria e publishers para a nossa loja de jogos!</P>
+              <P>Ao lado você pode inserir diferentes jogos, categorias e publishers para a nossa loja de jogos!</P>
               <Separator style={{ marginTop: 37, marginBottom: 36 }} />
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 {FIRST_BLOCK_LINKS.map((data, index) => {
