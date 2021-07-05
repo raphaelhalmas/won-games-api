@@ -6,6 +6,7 @@
  */
 
 const axios = require("axios");
+const slugify = require("slugify");
 
 async function getGameInfo(slug){
     const jsdom = require("jsdom")
@@ -29,6 +30,10 @@ module.exports = {
 
         const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&page=1&search=streets+of+rage&sort=popularity`
         const { data: { products } } = await axios.get(gogApiUrl)        
-        console.log(await getGameInfo(products[0].slug))
+        // console.log(await getGameInfo(products[0].slug))
+
+        const { developer, publisher, slug } = products[0]
+        await strapi.services.publisher.create({ name: publisher, slug: slugify(publisher).toLowerCase() })
+        await strapi.services.developer.create({ name: developer, slug: slugify(developer).toLowerCase() })
     }
 };
