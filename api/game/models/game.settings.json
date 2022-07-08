@@ -25,7 +25,7 @@
     "short_description": {
       "type": "text",
       "required": true,
-      "maxLength": 160
+      "maxLength": 230
     },
     "description": {
       "type": "richtext",
